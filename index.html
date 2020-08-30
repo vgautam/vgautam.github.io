@@ -9,38 +9,64 @@
     <meta name="author" content="Vasundhara Gautam">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Vasundhara Gautam</title>
   </head>
   <body>
-    <style>
-      body {
-      padding-top: 3.5rem;
-      }
-    </style>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top mb-4">
-      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand" href="index.html">Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Link1</a>
+            <a class="nav-link" href="work.html">Work</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Link2</a>
+            <a class="nav-link" href="service.html">Service</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="recognition.html">Recognition</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="cv.html">CV</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Interests</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown">
+              <a class="dropdown-item" href="birding.html">Birding</a>
+              <a class="dropdown-item" href="piano.html">Piano</a>
+              <a class="dropdown-item" href="singing.html">Singing</a>
+            </div>
           </li>
         </ul>
       </div>
     </nav>
-    <main role="main">
-      <div class="jumbotron">
-        <div class="container">
-          <h1>Vasundhara Gautam</h1>
-          <p class="lead">Computational linguist with broad-ranging industry and research experience, and interests in blah blah rhubarb rhubarb</p>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container" align="center">
+        <h1 class="vg-title">Vasundhara Gautam</h1>
+        <p class="lead vg-subtitle">Computational Linguist</p>
+      </div>
+    </div>
+    <main role="main" class="container">
+      <div class="row mb-3" align="center">
+        <div class="col-sm-6">hello!</div>
+        <div class="col-sm-6">world!</div>
+      </div>
+      <br/>
+      <div class="container-sm">
+        <div class="col-sm-8 mx-auto" align="center">
+        <p>I am a computational linguist currently working in industry as a speech recognition engineer.</p>
+        <p>I have a BSc in Computing Science and Linguistics from Simon Fraser University.</p>
+        <p>During my undergraduate degree, I worked at an experimental phonology lab and a lab that took computational approaches to processing discourse.</p>
+        <p>My experience is thus varied, both in subfields (NLP; discourse analysis; speech recognition, phonology),
+        as well as in methods (eyetracking, corpus linguistics methods)</p>
         </div>
       </div>
     </main>
+    <!-- Computational linguist with broad-ranging industry and research experience, and interests in blah blah rhubarb rhubarb -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
