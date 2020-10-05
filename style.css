@@ -1,5 +1,6 @@
 .vg-title {font-size: 3.5rem;}
 .vg-subtitle {font-size: 1.5rem;}
+a {color: #0056B3;}
 body {padding-top: 3.5rem;}
 .navbar-nav > li > .dropdown-menu a:hover { background-color: #DDDDDD; }
 nav > a:hover { color: #A6A6A6 !important; } 
