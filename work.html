@@ -79,15 +79,19 @@
          <h2><a href="http://www.sfu.ca/discourse-lab.html"><abbr title="Simon Fraser University">SFU</abbr> Discourse Processing Lab</a></h2>
          <p>Research Assistant</p>
          <h4>Gender Gap Tracker</h4>
-           <p>Ethical considerations: gender inference, names, nonbinary representation. Links to Kirby's talk and other research</p>
+           <p>This project seeks to quantify gender bias in the media by counting the proportion of people quoted in news text who are women. To do so, we developed a system that analyzes articles published online by certain English-language Canadian news outlets, using parts we built in combination with off-the-shelf NLP tools.</p>
+           <em>
+           <p>Nota bene: This project uses gender analysis that has some notable flaws. Although we have three categories of gender—male, female and other—the 'other' category lumps together cases where the speaker's gender is unknown as well as where the speaker's gender is known to fall outside the binary. Furthermore, our system depends on databases that encode binary gender (which erases nonbinary people) and on other NLP systems, e.g., for coreference analysis, that are known to have significant performance gaps for resolving instances of singular they and for English neopronouns (ze/hir, xe/xyr, etc.). We have manual overrides for (famous) people whom we know are systematically misgendered by these systems we depend on, but for most cases, we make probabilistic guesses at a person's gender based on their name - a problematic and cissexist practice. This impacts the accuracy of all reported results and we discuss these ethical considerations and more in our paper (currently under review).</p>
+           <p>Gender is fluid and personal, and therefore "gender recognition" as a concept is impossible to do. At the same time, equitable representation in the media is important, and all previous manual attempts at quantifying this gender gap in media quotes have required orders of magnitude more time and labour, while still suffering from many of the same assumptions (e.g., correlating certain names with a gender, assuming pronouns unambiguously tell you someone's gender, etc.). Self-reported gender for speakers quoted in newspaper articles is not information that reporters collect, though this would be how to do this research in a perfect world.</p>
+           <p>If you are considering doing similar work or just generally examining gender as a variable, I encourage you to look at the following references: this <a href="https://towardsdatascience.com/towards-trans-inclusive-ai-a4abe9ad4e62">blog post on trans-inclusive AI</a>, this excellent <a href="https://www.youtube.com/watch?v=jVr8NJwcMH4">talk by Kirby Conrod on How To Do Things With Gender</a>, the <a href="https://www.aclweb.org/anthology/2020.acl-main.418/">Cao-Daumé paper on gender-inclusive coreference resolution</a> which includes some great examples and new datasets, and this <a href="https://www.aclweb.org/anthology/W17-1601/">paper by Brian Larson on gender as a variable in NLP</a>, informed by the Belmont Report. Look up Kirby Conrod, Os Keyes, Lauren Ackerman and Ártemis López. For gender and facial recognition, read <a href="https://dl.acm.org/doi/abs/10.1145/3359246">this paper evaluating commercial facial recognition technologies</a>, and this <a href="https://dl.acm.org/doi/10.1145/3274357">Os Keyes paper about the impact of gender recognition using facial analysis on trans folks</a>.</p>
+           </em>
            <ul>
-             <li>https://www.sfu.ca/sfunews/stories/2019/03/the-future-of-womens-voices-in-media-maite-taboada.html</li>
-             <li>https://theconversation.com/tracking-the-gender-gap-in-canadian-media-110082</li>
-             <li>GGT talk</li>
-             <li>Symposium on public discourse and data science</li>
-             <li>Paper</li>
-             <li>Code</li>
-             <li>Website</li>
+             <li>Paper: <em>The Gender Gap Tracker: Using Natural Language Processing to measure gender bias in media</em> [under review, 2020]. Fatemeh Torabi Asr, Mohammad Mazraeh, Alexandre Lopes, <strong>Vasundhara Gautam</strong>, Junette Gonzales, Maite Taboada.</li>
+             <li>Code: <a href="https://github.com/sfu-discourse-lab/GenderGapTracker">Gender Gap Tracker GitHub repository</a></li>
+             <li>Website: <a href="https://gendergaptracker.informedopinions.org/">Gender Gap Tracker</a></li>
+             <li>Article: <a href="https://theconversation.com/tracking-the-gender-gap-in-canadian-media-110082">Tracking the gender gap in Canadian media</a>. Maite Taboada, Fatemeh Torabi Asr.</li>
+             <li>Press: <a href="https://www.sfu.ca/sfunews/stories/2019/03/the-future-of-womens-voices-in-media-maite-taboada.html">The future of women’s voices in media: an interview with Gender Gap Tracker’s lead SFU researcher</a></li>
+             <li>Talk and panel discussion: Tracking the Gender Gap in Canadian Media - Taking a Big Data Approach. 2019, SFU Big Data Hub. I was a panelist.</li>
            </ul>
          <h4>TACT: Topic Analysis, Constructiveness and Toxicity</h4>
            <ul>
@@ -96,6 +100,7 @@
              <li>Ling poster session</li>
              <li>UGRS</li>
              <li>Code</li>
+             <li>Symposium on public discourse and data science</li>
            </ul>
          <h4>Adverbly Adjectives</h4>
            <ul>
