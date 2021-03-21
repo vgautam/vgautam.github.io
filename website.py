@@ -1,6 +1,7 @@
 import flask
 
 app = flask.Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31557601 # 1 year 1 second, because prime
 
 @app.route('/')
 def index():
