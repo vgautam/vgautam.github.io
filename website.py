@@ -39,5 +39,39 @@ def cv():
 def page_not_found(e):
     return flask.render_template('404.html'), 404
 
+# Is there a cleaner way of handling these redirects?
+
+@app.route('/index.html')
+def index_old():
+    return flask.redirect(flask.url_for('index'))
+
+@app.route('/birding.html')
+def birding_old():
+    return flask.redirect(flask.url_for('birding'))
+
+@app.route('/music.html')
+def music_old():
+    return flask.redirect(flask.url_for('music'))
+
+@app.route('/cv.html')
+def cv_old():
+    return flask.redirect(flask.url_for('cv'))
+
+@app.route('/service.html')
+def service_old():
+    return flask.redirect(flask.url_for('service'))
+
+@app.route('/work.html')
+def work_old():
+    return flask.redirect(flask.url_for('work'))
+
+@app.route('/recognition.html')
+def recognition_old():
+    return flask.redirect(flask.url_for('recognition'))
+
+@app.route('/contact.html')
+def contact_old():
+    return flask.redirect(flask.url_for('contact'))
+
 if __name__ == '__main__':
     app.run()
