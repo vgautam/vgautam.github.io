@@ -1,65 +1,136 @@
-{% extends "layout.html" %}
-
-{% block short_title %}Service{% endblock %}
-
-{% block title %}Service{% endblock %}
-{% block subtitle %}Volunteering, Mentorship, and More{% endblock %}
-
-{% block body %}
-    <main role="main" class="container">
-      <div class="container">
-       <section>
-         <h2>2020</h2>
-         <ul>
-           <li>Co-founded ColourID, a Dialpad Employee Resource Group to support and centre the voices of employees who are Black, Indigenous and people of colour.</li>
-           <li>Led interactive sessions with 6 classes (from grades 1-7) at local school, to introduce kids to coding. I was invited to the school for <a href="https://www.csedweek.org/">Computer Science Education Week</a>.</li>
-           <li>Organizer of <a href="https://queerinai.org/">Queer in AI</a> socials at <abbr title="Conference on Empirical Methods in Natural Language Processing">EMNLP</abbr> 2020, <abbr title="Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics">AACL</abbr> 2020 and <abbr title="International Conference on Computational Linguistics">COLING</abbr> 2020.</li>
-           <li>Taught a virtual 4-hour workshop on <attr title="Visual Basic for Applications">VBA</attr> for Excel to 15 business students, as part of the Young Women in Business WISE program's Spring 2020 workshop series.</li>
-           <li>Moderated group mentoring sessions at <a href="https://acl2020.org/">ACL 2020</a>.</li>
-           <li>Mentored 11 people who contacted me through LinkedIn or Twitter for career and school advice (6 of 11 come from under-represented communities in tech).</li>
-           <li>Created copylefted linguistics-related emoji. <a href="{{ url_for('static', filename='img/waveform.png') }}">Image: waveform emoji.</a> <a href="{{ url_for('static', filename='img/spectrogram.png') }}">Image: spectrogram emoji.</a> <a href="{{ url_for('static', filename='img/syntax-tree.png') }}">Image: syntax tree emoji.</a></li>
-         </ul>
-       </section>
-       <section>
-         <h2>2019</h2>
-         <ul>
-           <li>Data Science Mentor at Try/Catch 2019 Computing and Technology Conference for high school girls.</li>
-           <li>Mentored 1 person (from an under-represented community in tech) who contacted me through LinkedIn for career and school advice.</li>
-           <li>Started the Vancouver Social Committee at Dialpad.</li>
-           <li>Volunteer at Next Steps, an open house event for admitted students to learn more about life at Simon Fraser University.</li>
-           <li>Emcee at Perform for Pride, a benefit cabaret for LGBTQ+ organizations around the Greater Vancouver Area, Canada.</li>
-         </ul>
-       </section>
-       <section>
-         <h2>2018</h2>
-         <ul>
-           <li>Member of the GE Digital Social Committee.</li>
-         </ul>
-       </section>
-       <section>
-         <h2>2017</h2>
-         <ul>
-           <li>Photographer at Try/Catch 2017.</li>
-           <li>Elected as the VP (Communications) to the Residence Hall Association.</li>
-         </ul>
-       </section>
-       <section>
-         <h2>2016</h2>
-         <ul>
-           <li>Elected as a House Chair (student liaison) to the Residence Hall Association.</li>
-           <li>Coding mentor at Kids Learning Code and Girls Learning Code (now <a href="https://www.canadalearningcode.ca/">Canada Learning Code</a>)</li>
-         </ul>
-       </section>
-       <section>
-         <h2>2015</h2>
-         <ul>
-           <li>Elected as a House Chair (student liaison) to the Residence Hall Association.</li>
-           <li>Volunteer at the <attr title="South East Asian Games">SEA Games</attr> 2020 in Singapore, as a bus host.</li>
-           <li>Volunteer, Pakistani Students Association at Simon Fraser University.</li>
-         </ul>
-       </section>
-        </div>
-       </div>
-      </div>
-    </main>
+{% extends "layout.html" %} {% block short_title %}Service{% endblock %} {%
+block title %}Service{% endblock %} {% block subtitle %}Volunteering,
+Mentorship, and More{% endblock %} {% block body %}
+<main role="main" class="container">
+  <div class="container">
+    <section>
+      <h2>2020</h2>
+      <ul>
+        <li>
+          Co-founded ColourID, a Dialpad Employee Resource Group to support and
+          centre the voices of employees who are Black, Indigenous and people of
+          colour.
+        </li>
+        <li>
+          Led interactive sessions with 6 classes (from grades 1-7) at local
+          school, to introduce kids to coding. I was invited to the school for
+          <a href="https://www.csedweek.org/">Computer Science Education Week</a
+          >.
+        </li>
+        <li>
+          Organizer of <a href="https://queerinai.org/">Queer in AI</a> socials
+          at
+          <abbr
+            title="Conference on Empirical Methods in Natural Language Processing"
+            >EMNLP</abbr
+          >
+          2020,
+          <abbr
+            title="Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics"
+            >AACL</abbr
+          >
+          2020 and
+          <abbr title="International Conference on Computational Linguistics"
+            >COLING</abbr
+          >
+          2020.
+        </li>
+        <li>
+          Taught a virtual 4-hour workshop on
+          <attr title="Visual Basic for Applications">VBA</attr> for Excel to 15
+          business students, as part of the Young Women in Business WISE
+          program's Spring 2020 workshop series.
+        </li>
+        <li>
+          Moderated group mentoring sessions at
+          <a href="https://acl2020.org/">ACL 2020</a>.
+        </li>
+        <li>
+          Mentored 11 people who contacted me through LinkedIn or Twitter for
+          career and school advice (6 of 11 come from under-represented
+          communities in tech).
+        </li>
+        <li>
+          Created copylefted linguistics-related emoji.
+          <a href="{{ url_for('static', filename='img/waveform.png') }}"
+            >Image: waveform emoji.</a
+          >
+          <a href="{{ url_for('static', filename='img/spectrogram.png') }}"
+            >Image: spectrogram emoji.</a
+          >
+          <a href="{{ url_for('static', filename='img/syntax-tree.png') }}"
+            >Image: syntax tree emoji.</a
+          >
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>2019</h2>
+      <ul>
+        <li>
+          Data Science Mentor at Try/Catch 2019 Computing and Technology
+          Conference for high school girls.
+        </li>
+        <li>
+          Mentored 1 person (from an under-represented community in tech) who
+          contacted me through LinkedIn for career and school advice.
+        </li>
+        <li>Started the Vancouver Social Committee at Dialpad.</li>
+        <li>
+          Volunteer at Next Steps, an open house event for admitted students to
+          learn more about life at Simon Fraser University.
+        </li>
+        <li>
+          Emcee at Perform for Pride, a benefit cabaret for LGBTQ+ organizations
+          around the Greater Vancouver Area, Canada.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>2018</h2>
+      <ul>
+        <li>Member of the GE Digital Social Committee.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>2017</h2>
+      <ul>
+        <li>Photographer at Try/Catch 2017.</li>
+        <li>
+          Elected as the VP (Communications) to the Residence Hall Association.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>2016</h2>
+      <ul>
+        <li>
+          Elected as a House Chair (student liaison) to the Residence Hall
+          Association.
+        </li>
+        <li>
+          Coding mentor at Kids Learning Code and Girls Learning Code (now
+          <a href="https://www.canadalearningcode.ca/">Canada Learning Code</a>)
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>2015</h2>
+      <ul>
+        <li>
+          Elected as a House Chair (student liaison) to the Residence Hall
+          Association.
+        </li>
+        <li>
+          Volunteer at the
+          <attr title="South East Asian Games">SEA Games</attr> 2020 in
+          Singapore, as a bus host.
+        </li>
+        <li>
+          Volunteer, Pakistani Students Association at Simon Fraser University.
+        </li>
+      </ul>
+    </section>
+  </div>
+</main>
 {% endblock %}
