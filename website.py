@@ -21,7 +21,7 @@ def music():
     content = flask.render_template('music.html')
     response = flask.make_response(content)
     # TODO: dedupe - currently here, in birding, and in after-request, therefore, error-prone
-    response.headers['Content-Security-Policy'] = "default-src 'self' https://www.youtube-nocookie.com https://w.soundcloud.com/; data http://www.w3.org/; script-src 'unsafe-inline' https://stackpath.bootstrapcdn.com https://code.jquery.com/; media-src *; style-src https://stackpath.bootstrapcdn.com 'unsafe-inline';"
+    response.headers['Content-Security-Policy'] = "default-src 'self' https://www.youtube-nocookie.com https://w.soundcloud.com/ data: 'unsafe-inline'; script-src 'unsafe-inline' https://stackpath.bootstrapcdn.com https://code.jquery.com/; media-src *; style-src https://stackpath.bootstrapcdn.com 'unsafe-inline';"
     return response
 
 @app.route('/recognition')
@@ -40,7 +40,7 @@ def work():
 def birding():
     content = flask.render_template('birding.html')
     response = flask.make_response(content)
-    response.headers['Content-Security-Policy'] = "default-src 'self' https://live.staticflickr.com https://embedr.flickr.com/; data http://www.w3.org/; script-src 'unsafe-inline' https://stackpath.bootstrapcdn.com https://code.jquery.com/ http://embedr.flickr.com/ https://widgets.flickr.com/; media-src *; style-src https://stackpath.bootstrapcdn.com 'unsafe-inline';"
+    response.headers['Content-Security-Policy'] = "default-src 'self' https://live.staticflickr.com https://embedr.flickr.com/ data: 'unsafe-inline'; script-src 'unsafe-inline' https://stackpath.bootstrapcdn.com https://code.jquery.com/ http://embedr.flickr.com/ https://widgets.flickr.com/; media-src *; style-src https://stackpath.bootstrapcdn.com 'unsafe-inline';"
     return response
 
 @app.route('/cv')
@@ -91,7 +91,11 @@ def add_header(response):
     response.headers['X-Frame-Options'] = 'SAMEORIGIN'
     response.headers['X-XSS-Protection'] = '1; mode=block'
     if 'Content-Security-Policy' not in response.headers:
-        response.headers['Content-Security-Policy'] = "default-src 'self'; data http://www.w3.org/; script-src 'unsafe-inline' https://stackpath.bootstrapcdn.com https://code.jquery.com/; media-src *; style-src https://stackpath.bootstrapcdn.com 'unsafe-inline';"
+        # TODO: the "data: 'unsafe-inline'" part is bad and vulnerable to XSS and you should try to
+        # get rid of bootstrap's CSS ASAP, and you should feel bad until you do
+        # https://security.stackexchange.com/questions/94993/is-including-the-data-scheme-in-your-content-security-policy-safe
+        # https://research.securitum.com/do-you-allow-to-load-svg-files-you-have-xss/
+        response.headers['Content-Security-Policy'] = "default-src 'self' data: 'unsafe-inline'; script-src 'unsafe-inline' https://stackpath.bootstrapcdn.com https://code.jquery.com/; media-src *; style-src https://stackpath.bootstrapcdn.com 'unsafe-inline';"
     return response
 
 if __name__ == '__main__':
