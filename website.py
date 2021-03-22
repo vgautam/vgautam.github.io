@@ -1,7 +1,12 @@
 import flask
 
 app = flask.Flask(__name__)
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31557601 # 1 year 1 second, because prime
+app.config.update(
+    SEND_FILE_MAX_AGE_DEFAULT=31557601, # 1 year 1 second because prime
+    SESSION_COOKIE_SECURE=True,
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SAMESITE='Strict',
+)
 
 @app.route('/')
 def index():
@@ -13,7 +18,11 @@ def contact():
 
 @app.route('/music')
 def music():
-    return flask.render_template('music.html')
+    content = flask.render_template('music.html')
+    response = flask.make_response(content)
+    # TODO: dedupe - currently here, in birding, and in after-request, therefore, error-prone
+    response.headers['Content-Security-Policy'] = "default-src 'self' https://www.youtube-nocookie.com https://w.soundcloud.com/; data http://www.w3.org/; script-src 'unsafe-inline' https://stackpath.bootstrapcdn.com https://code.jquery.com/; media-src *; style-src https://stackpath.bootstrapcdn.com 'unsafe-inline';"
+    return response
 
 @app.route('/recognition')
 def recognition():
@@ -29,7 +38,10 @@ def work():
 
 @app.route('/birding')
 def birding():
-    return flask.render_template('birding.html')
+    content = flask.render_template('birding.html')
+    response = flask.make_response(content)
+    response.headers['Content-Security-Policy'] = "default-src 'self' https://live.staticflickr.com https://embedr.flickr.com/; data http://www.w3.org/; script-src 'unsafe-inline' https://stackpath.bootstrapcdn.com https://code.jquery.com/ http://embedr.flickr.com/ https://widgets.flickr.com/; media-src *; style-src https://stackpath.bootstrapcdn.com 'unsafe-inline';"
+    return response
 
 @app.route('/cv')
 def cv():
@@ -72,6 +84,15 @@ def recognition_old():
 @app.route('/contact.html')
 def contact_old():
     return flask.redirect(flask.url_for('contact'))
+
+@app.after_request
+def add_header(response):
+    response.headers['Strict-Transport-Security'] = 'max-age=31557601; includeSubDomains'
+    response.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    response.headers['X-XSS-Protection'] = '1; mode=block'
+    if 'Content-Security-Policy' not in response.headers:
+        response.headers['Content-Security-Policy'] = "default-src 'self'; data http://www.w3.org/; script-src 'unsafe-inline' https://stackpath.bootstrapcdn.com https://code.jquery.com/; media-src *; style-src https://stackpath.bootstrapcdn.com 'unsafe-inline';"
+    return response
 
 if __name__ == '__main__':
     app.run()
