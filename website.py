@@ -56,7 +56,7 @@ def curriculum_vitae():
     return flask.render_template('cv.html')
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(_):
     return flask.render_template('404.html'), 404
 
 # Is there a cleaner way of handling these redirects?
